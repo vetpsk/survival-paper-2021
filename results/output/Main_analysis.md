@@ -1,13 +1,8 @@
----
-title: "Main Survival Analysis Report"
-author: "P Kulkarni"
-date: "1/29/2021"
-output: 
-  html_document:
-    keep_md: yes
----
 
+# Main Survival Analysis Report
+### author: "P Kulkarni"
 
+________________________________________
 
 
 ### Required Libraries and dependencies
@@ -22,12 +17,23 @@ library(MASS)
 library(skimr)
 ```
 
+## Explanation
 
-
-### DESCRIPTION OF DATA
+  This report contains the output of main analysis of survival-paper. The data is described [here](#description-of-data). <br/> 
+  2 survival models are created. Both models are in the form of `survival::survreg()` with `survreg(...,type = "interval")` format
+  with clustering at herd-level.<br/>
+  The first model involves only the main effects of the factors used in this analysis. Details are [here](#model-with-only-main-effects)
+  The second model involves interaction effects that are selected by stepwise backward selection procedure using `MASS:stepAIC()`.
+  Details are [here](#model-with-all-interactions).<br/><br/>
+  An additional model is created similar to [model3](#model-with-all-interactions) but with `survival::frailty()` instead of `survival::cluster()`
+  at herd level. Details are [here](#frailty-attempt). <br/>
+  
+<br/><br/><br/>
+### Description of data
 
 ### Factors: 
-
+<br/>
+<br/>
 #### parity 4 levels: last parity at time of failure/ event
  
  1 = 1st parity
@@ -132,7 +138,7 @@ library(skimr)
 |LactValue      |         0|             1|      97.02|      22.12|      0.00|      92.00|     100.00|     109.00|     193.00|▁▁▇▁▁ |
 
 
-### Model: all main effects
+### model with only main effects
 
 ```
 ## 
@@ -171,7 +177,8 @@ library(skimr)
 
 ![](Main_analysis_files/figure-html/mod2-1.png)<!-- -->![](Main_analysis_files/figure-html/mod2-2.png)<!-- -->
 
-### Model: all interactions (except insemfactor and fprfactor2 **)
+### model with all interactions 
+#### (except insemfactor and fprfactor2 **)
 
 
 ```
@@ -236,19 +243,9 @@ Look here for [details](https://www.rdocumentation.org/packages/MASS/versions/7.
 
 
 ```
-## --Anova and AIC for difference in main effects and interaction model--
+## --AIC for difference in main effects and interaction model--
 ```
 
-```
-## ANOVA
-```
-
-
-
-|Terms                                                                                                                                                                    | Resid. Df|    -2*LL|Test | Df| Deviance|  Pr(>Chi)|
-|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------:|--------:|:----|--:|--------:|---------:|
-|LactValue1 + parity + Insemfactor + SCCfactor + fprfactor + fprfactor2 + perfactor                                                                                       |     87311| 35984.58|     | NA|       NA|        NA|
-|LactValue1 + parity + Insemfactor + SCCfactor + fprfactor + perfactor + fprfactor2 + LactValue1:perfactor + fprfactor:perfactor + parity:perfactor + SCCfactor:perfactor |     87293| 35945.20|=    | 18| 39.37912| 0.0025337|
 
 ```
 ## AIC
@@ -256,7 +253,7 @@ Look here for [details](https://www.rdocumentation.org/packages/MASS/versions/7.
 
 
 
-|         | df|      AIC|
+|    Model| df|      AIC|
 |:--------|--:|--------:|
 |modsurv2 | 16| 36016.58|
 |modsurv3 | 34| 36013.20|
