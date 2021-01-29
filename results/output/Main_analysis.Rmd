@@ -1,0 +1,210 @@
+---
+title: "Main Survival Analysis Report"
+author: "P Kulkarni"
+date: "1/29/2021"
+output: 
+  html_document:
+    keep_md: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Required Libraries and dependencies
+
+```{r libraries, echo = T, eval = T, message=F, warning=F}
+library(dplyr)
+library(data.table)
+library(survival)
+library(multcomp)
+library(MASS)
+library(skimr)
+```
+
+```{r data_read, echo = FALSE, message=F, warning=F}
+#setwd("./survival-paper")
+df2 <- fread("./data/inter/sample10_survdata.csv", header = T, sep = ",", nThread = 2)
+```
+
+### DESCRIPTION OF DATA
+
+### Factors: 
+
+#### parity 4 levels: last parity at time of failure/ event
+ 
+ 1 = 1st parity
+ 
+ 2 = 2nd parity
+ 
+ 3 = parity 3 and 4
+ 
+ 4 = more than 4 parities
+ 
+##### fprfactor 1 for ketosis(fat protein ratio): proportion of times fpr > 1.5 
+
+##### on test dates of MPR where days in milk <= 100 days
+
+ 1. Below 50%
+ 
+ 2. More than 50%
+
+##### fprfactor 2 for SARA (fat protein ratio): proportion of times fpr < 0.9 
+
+##### on test dates of MPR where days in milk <= 100 days
+
+ 1. Below 50%
+ 
+ 2. More than 50%
+
+##### SCCfactor 4 levels: somatic cell count on test day X 1000/ ml
+
+ 1. less than 200 => SCC < 200,000
+ 
+ 2. 200 to 600 => 200,000 < SCC <= 600,000
+ 
+ 4. 600 to 1000 => 600,000 < SCC <= 1 million
+ 
+ 5. more than 1000 => SCC > 1 million
+ 
+##### perfactor: calendar time based perturbations factor for each year of event, 4 levels
+
+ 1. before 2013, between 2013 and 2016, beyond 2016
+ 
+ 2. based on --> year @ TestDate
+ 
+##### LactValue1: 3levels => relative production level of animals
+ 
+ 1. less than 90 = Lactatiewaarde <= 900
+ 
+ 2. between 91 to 110 = 91 <= LW <= 110
+ 
+ 2. more than 110 = LW > 110
+
+##### Insemfactor: 3 levels
+
+ 1. below 2 = rolling average inseminations per parity <= 2
+ 
+ 2. between 2 and 5 =  2 < roll_insem <= 5
+ 
+ 3. beyond 5 = roll_insem > 5
+
+
+```{r factor_changes, echo = F}
+df2$SCCfactor <- as.factor(df2$SCCfactor)
+df2$SCCfactor <- relevel(df2$SCCfactor, ref = "below 200")
+df2$perfactor <- as.factor(df2$perfactor)
+df2$perfactor <- relevel(df2$perfactor, ref = "before 2014")
+df2$fprfactor <- as.factor(df2$fprfactor)
+df2$fprfactor <- relevel(df2$fprfactor, ref = "below 50%")
+df2$fprfactor2 <- as.factor(df2$fprfactor2)
+df2$fprfactor2 <- relevel(df2$fprfactor2, ref = "Below 50%")
+df2$parity <- as.factor(df2$parity)
+df2$parity <- relevel(df2$parity, ref = "1st parity")
+df2$LactValue1 <- as.factor(df2$LactValue1)
+df2$LactValue1 <- relevel(df2$LactValue1, ref = "between 91 to 110")
+df2$Insemfactor <- as.factor(df2$Insemfactor)
+df2$Insemfactor <- relevel(df2$Insemfactor, ref = "below 2")
+
+df2$BirthDate <- as.Date(df2$BirthDate, format = "%Y-%m-%d")
+df2$TestDate <- as.Date(df2$TestDate, format = "%Y-%m-%d")
+df2$max_date <- as.Date(df2$max_date, format = "%Y-%m-%d")
+df2$min_date <- as.Date(df2$min_date, format = "%Y-%m-%d")
+```
+
+```{r summary, echo=F, message=F}
+skim(df2) %>% partition()
+```
+
+
+### Model: all main effects
+```{r mod2,echo=F}
+modsurv2 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~
+                            LactValue1 + parity + Insemfactor +
+                            SCCfactor + fprfactor + fprfactor2 + perfactor +
+                            cluster(HerdIdentifier),
+                    data = df2, dist = "lognormal",
+                    robust = TRUE, model = T)
+
+print(summary(modsurv2), digits = 2)
+
+
+fitted_modsurv2 <- modsurv2$linear.predictors
+resids_modsurv2 <- (log(modsurv2$y[,1]) - fitted_modsurv2) / modsurv2$scale
+resKm2 <- survfit(Surv(resids_modsurv2, event) ~ 1, data = df2[complete.cases(df2),])
+
+plot(resKm2, mark.time = FALSE, xlab = "AFT Residuals", ylab = "Survival Probability",
+     main = "Testing residuals for lognormal regression model: Main effects")
+xx <- seq(min(resids_modsurv2), max(resids_modsurv2), length.out = length(resids_modsurv2))
+yy <- pnorm(xx, lower.tail = FALSE)
+lines(xx, yy, col = "red", lwd = 2)
+legend("bottomleft", c("KM estimate", "95% CI KM estimate",
+                       "Survival function of Lognormal distribution"),
+       lty = c(1,2,1), col = c(1,1,2), bty = "n")
+
+curve(1-plnorm(x, modsurv2$coefficients[1],modsurv2$scale),0,1000, main = "baseline survival from model2", ylab = "survival probability", xlab = "time in weeks", add = F)
+```
+
+### Model: all interactions (except insemfactor and fprfactor2 **)
+
+```{r mod3, echo = F, R.options=list(width = 600)}
+modsurv3 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~ 
+                            LactValue1 + parity + Insemfactor + 
+                            SCCfactor + fprfactor + perfactor + fprfactor2 +
+                            LactValue1:perfactor + fprfactor:perfactor +
+                            parity:perfactor + 
+                            SCCfactor:perfactor +
+                            cluster(HerdIdentifier), 
+                    data = df2, dist = "lognormal",
+                    robust = TRUE, model = T)
+
+print(summary(modsurv3), digits = 2)
+
+fitted_modsurv3 <- modsurv3$linear.predictors
+resids_modsurv3 <- (log(modsurv3$y[,1]) - fitted_modsurv3) / modsurv3$scale
+
+resKm3 <- survfit(Surv(resids_modsurv3, event) ~ 1, data = df2[complete.cases(df2),])
+plot(resKm3, mark.time = FALSE, xlab = "AFT Residuals", ylab = "Survival Probability",
+     main = "Testing residuals for Lognormal regression model",sub = "all significant interactions")
+
+xx3 <- seq(min(resids_modsurv3), max(resids_modsurv3), length.out = length(resids_modsurv3))
+yy3 <- pnorm(xx3, lower.tail = F)
+lines(xx3, yy3, col = "red", lwd = 2)
+legend("bottomleft", c("KM estimate", "95% CI KM estimate", 
+                       "Survival function of normal distribution"), 
+       lty = c(1,2,1), col = c(1,1,2), bty = "n")
+```
+___________________________________ <br/>
+** Stepwise backward selection with AIC removes insignificant factors/ interactions
+Look here for [details](https://www.rdocumentation.org/packages/MASS/versions/7.3-53/topics/stepAIC)
+
+
+```{r stepAIC, echo=F, R.options=list(width = 600)}
+
+cat("--Anova and AIC for difference in main effects and interaction model--")
+cat("ANOVA")
+anova(modsurv2, modsurv3) %>% knitr::kable()
+cat("AIC")
+AIC(modsurv2, modsurv3) %>% knitr::kable()
+```
+
+
+
+
+### frailty attempt
+
+```{r mod4, echo = F, R.options=list(width = 600)}
+modsurv4 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~ 
+                            LactValue1 + parity + Insemfactor + 
+                            SCCfactor + fprfactor + perfactor + fprfactor2 +
+                            LactValue1:perfactor + fprfactor:perfactor +
+                            parity:perfactor + 
+                            SCCfactor:perfactor +
+                            frailty(HerdIdentifier), 
+                    data = df2, dist = "lognormal")
+print(summary(modsurv4), digits = 2)
+
+data.frame(frailty_var = c("frail", "fvar", "penalty"), details = rbind(paste(round(modsurv4$frail,2), collapse = ","), paste(round(modsurv4$fvar,2), collapse = ","), round(modsurv4$penalty,2))) %>% knitr::kable(digits = 2)
+
+```
