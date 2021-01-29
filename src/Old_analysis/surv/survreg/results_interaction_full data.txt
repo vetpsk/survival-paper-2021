@@ -1,0 +1,320 @@
+Call:
+survreg(formula = Surv(tstart, tstop, event = event, type = "interval") ~ 
+    LactValue1 + parity + Insemfactor + SCCfactor + fprfactor + 
+        perfactor + perfactor:LactValue1 + perfactor:Insemfactor + 
+        perfactor:fprfactor + perfactor:parity + perfactor:SCCfactor + 
+        cluster(HerdIdentifier), data = df2, dist = "lognormal", 
+    model = T, robust = TRUE)
+                                                                 Value
+(Intercept)                                                   5.534659
+LactValue1more than 100                                       0.122288
+parity2nd parity                                              0.291404
+parity3-4th parity                                            0.619491
+paritymore than 4 parities                                    1.034048
+Insemfactorbetween 2 and 5                                    0.076695
+Insemfactorbeyond 5                                           0.117352
+SCCfactorbetween 200 and 600                                 -0.051401
+SCCfactorbetween 600 and 1000                                -0.081074
+SCCfactormore than 1000                                      -0.145349
+fprfactorbetween 10% and 50%                                  0.053636
+fprfactormore than 50%                                        0.058864
+perfactorbetween 2014 and 2016                               -0.001984
+perfactorbeyond 2016                                         -0.047072
+LactValue1more than 100:perfactorbetween 2014 and 2016        0.002428
+LactValue1more than 100:perfactorbeyond 2016                 -0.010351
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016    -0.005768
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016           -0.017364
+Insemfactorbetween 2 and 5:perfactorbeyond 2016              -0.013888
+Insemfactorbeyond 5:perfactorbeyond 2016                     -0.016772
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016  -0.015900
+fprfactormore than 50%:perfactorbetween 2014 and 2016        -0.008329
+fprfactorbetween 10% and 50%:perfactorbeyond 2016            -0.026436
+fprfactormore than 50%:perfactorbeyond 2016                  -0.026836
+parity2nd parity:perfactorbetween 2014 and 2016              -0.004734
+parity3-4th parity:perfactorbetween 2014 and 2016            -0.003704
+paritymore than 4 parities:perfactorbetween 2014 and 2016    -0.025735
+parity2nd parity:perfactorbeyond 2016                         0.006512
+parity3-4th parity:perfactorbeyond 2016                       0.013201
+paritymore than 4 parities:perfactorbeyond 2016              -0.009067
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016   0.007252
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016  0.014514
+SCCfactormore than 1000:perfactorbetween 2014 and 2016        0.013594
+SCCfactorbetween 200 and 600:perfactorbeyond 2016             0.009988
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016            0.025457
+SCCfactormore than 1000:perfactorbeyond 2016                  0.034689
+Log(scale)                                                   -1.309376
+                                                              Std. Err
+(Intercept)                                                   0.001549
+LactValue1more than 100                                       0.000484
+parity2nd parity                                              0.000531
+parity3-4th parity                                            0.000669
+paritymore than 4 parities                                    0.001042
+Insemfactorbetween 2 and 5                                    0.000596
+Insemfactorbeyond 5                                           0.001690
+SCCfactorbetween 200 and 600                                  0.000482
+SCCfactorbetween 600 and 1000                                 0.000768
+SCCfactormore than 1000                                       0.000835
+fprfactorbetween 10% and 50%                                  0.000527
+fprfactormore than 50%                                        0.001737
+perfactorbetween 2014 and 2016                                0.000855
+perfactorbeyond 2016                                          0.000968
+LactValue1more than 100:perfactorbetween 2014 and 2016        0.000539
+LactValue1more than 100:perfactorbeyond 2016                  0.000570
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016     0.000632
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016            0.001790
+Insemfactorbetween 2 and 5:perfactorbeyond 2016               0.000724
+Insemfactorbeyond 5:perfactorbeyond 2016                      0.002044
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016   0.000591
+fprfactormore than 50%:perfactorbetween 2014 and 2016         0.002574
+fprfactorbetween 10% and 50%:perfactorbeyond 2016             0.000698
+fprfactormore than 50%:perfactorbeyond 2016                   0.003994
+parity2nd parity:perfactorbetween 2014 and 2016               0.000716
+parity3-4th parity:perfactorbetween 2014 and 2016             0.000786
+paritymore than 4 parities:perfactorbetween 2014 and 2016     0.001060
+parity2nd parity:perfactorbeyond 2016                         0.000724
+parity3-4th parity:perfactorbeyond 2016                       0.000840
+paritymore than 4 parities:perfactorbeyond 2016               0.001231
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016   0.000607
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016  0.001040
+SCCfactormore than 1000:perfactorbetween 2014 and 2016        0.000973
+SCCfactorbetween 200 and 600:perfactorbeyond 2016             0.000682
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016            0.001129
+SCCfactormore than 1000:perfactorbeyond 2016                  0.001078
+Log(scale)                                                    0.001993
+                                                             (Naive SE)       z
+(Intercept)                                                    0.000380 3573.34
+LactValue1more than 100                                        0.000272  252.62
+parity2nd parity                                               0.000374  549.15
+parity3-4th parity                                             0.000350  925.66
+paritymore than 4 parities                                     0.000393  992.02
+Insemfactorbetween 2 and 5                                     0.000255  128.62
+Insemfactorbeyond 5                                            0.000697   69.42
+SCCfactorbetween 200 and 600                                   0.000297 -106.72
+SCCfactorbetween 600 and 1000                                  0.000531 -105.59
+SCCfactormore than 1000                                        0.000431 -174.00
+fprfactorbetween 10% and 50%                                   0.000254  101.76
+fprfactormore than 50%                                         0.000765   33.89
+perfactorbetween 2014 and 2016                                 0.000514   -2.32
+perfactorbeyond 2016                                           0.000495  -48.63
+LactValue1more than 100:perfactorbetween 2014 and 2016         0.000425    4.50
+LactValue1more than 100:perfactorbeyond 2016                   0.000406  -18.17
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016      0.000397   -9.13
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016             0.001032   -9.70
+Insemfactorbetween 2 and 5:perfactorbeyond 2016                0.000383  -19.19
+Insemfactorbeyond 5:perfactorbeyond 2016                       0.001018   -8.21
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016    0.000398  -26.88
+fprfactormore than 50%:perfactorbetween 2014 and 2016          0.001428   -3.24
+fprfactorbetween 10% and 50%:perfactorbeyond 2016              0.000389  -37.87
+fprfactormore than 50%:perfactorbeyond 2016                    0.001507   -6.72
+parity2nd parity:perfactorbetween 2014 and 2016                0.000595   -6.61
+parity3-4th parity:perfactorbetween 2014 and 2016              0.000552   -4.71
+paritymore than 4 parities:perfactorbetween 2014 and 2016      0.000619  -24.27
+parity2nd parity:perfactorbeyond 2016                          0.000568    8.99
+parity3-4th parity:perfactorbeyond 2016                        0.000530   15.72
+paritymore than 4 parities:perfactorbeyond 2016                0.000601   -7.36
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016    0.000477   11.94
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016   0.000860   13.95
+SCCfactormore than 1000:perfactorbetween 2014 and 2016         0.000677   13.97
+SCCfactorbetween 200 and 600:perfactorbeyond 2016              0.000479   14.64
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016             0.000879   22.56
+SCCfactormore than 1000:perfactorbeyond 2016                   0.000691   32.17
+Log(scale)                                                     0.000382 -656.96
+                                                                   p
+(Intercept)                                                  < 2e-16
+LactValue1more than 100                                      < 2e-16
+parity2nd parity                                             < 2e-16
+parity3-4th parity                                           < 2e-16
+paritymore than 4 parities                                   < 2e-16
+Insemfactorbetween 2 and 5                                   < 2e-16
+Insemfactorbeyond 5                                          < 2e-16
+SCCfactorbetween 200 and 600                                 < 2e-16
+SCCfactorbetween 600 and 1000                                < 2e-16
+SCCfactormore than 1000                                      < 2e-16
+fprfactorbetween 10% and 50%                                 < 2e-16
+fprfactormore than 50%                                       < 2e-16
+perfactorbetween 2014 and 2016                                0.0203
+perfactorbeyond 2016                                         < 2e-16
+LactValue1more than 100:perfactorbetween 2014 and 2016       6.7e-06
+LactValue1more than 100:perfactorbeyond 2016                 < 2e-16
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016    < 2e-16
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016           < 2e-16
+Insemfactorbetween 2 and 5:perfactorbeyond 2016              < 2e-16
+Insemfactorbeyond 5:perfactorbeyond 2016                     2.3e-16
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016  < 2e-16
+fprfactormore than 50%:perfactorbetween 2014 and 2016         0.0012
+fprfactorbetween 10% and 50%:perfactorbeyond 2016            < 2e-16
+fprfactormore than 50%:perfactorbeyond 2016                  1.8e-11
+parity2nd parity:perfactorbetween 2014 and 2016              3.7e-11
+parity3-4th parity:perfactorbetween 2014 and 2016            2.4e-06
+paritymore than 4 parities:perfactorbetween 2014 and 2016    < 2e-16
+parity2nd parity:perfactorbeyond 2016                        < 2e-16
+parity3-4th parity:perfactorbeyond 2016                      < 2e-16
+paritymore than 4 parities:perfactorbeyond 2016              1.8e-13
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016  < 2e-16
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016 < 2e-16
+SCCfactormore than 1000:perfactorbetween 2014 and 2016       < 2e-16
+SCCfactorbetween 200 and 600:perfactorbeyond 2016            < 2e-16
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016           < 2e-16
+SCCfactormore than 1000:perfactorbeyond 2016                 < 2e-16
+Log(scale)                                                   < 2e-16
+
+Scale= 0.27 
+
+Log Normal distribution
+Loglik(model)= -23514562   Loglik(intercept only)= -26684539
+	Chisq= 6339953 on 35 degrees of freedom, p= 0 
+(Loglikelihood assumes independent observations)
+Number of Newton-Raphson Iterations: 9 
+n= 114506105 
+
+[1]       37 47029198
+
+Call:
+survreg(formula = Surv(tstart, tstop, event = event, type = "interval") ~ 
+    LactValue1 + strata(parity) + Insemfactor + SCCfactor + fprfactor + 
+        perfactor + perfactor:LactValue1 + perfactor:Insemfactor + 
+        perfactor:fprfactor + perfactor:SCCfactor + cluster(HerdIdentifier), 
+    data = df2, dist = "lognormal", model = T, robust = TRUE)
+                                                                 Value
+(Intercept)                                                   6.503755
+LactValue1more than 100                                       0.147159
+Insemfactorbetween 2 and 5                                    0.088520
+Insemfactorbeyond 5                                           0.133607
+SCCfactorbetween 200 and 600                                 -0.066424
+SCCfactorbetween 600 and 1000                                -0.085061
+SCCfactormore than 1000                                      -0.150612
+fprfactorbetween 10% and 50%                                  0.063051
+fprfactormore than 50%                                        0.076239
+perfactorbetween 2014 and 2016                               -0.018381
+perfactorbeyond 2016                                         -0.060453
+LactValue1more than 100:perfactorbetween 2014 and 2016        0.008147
+LactValue1more than 100:perfactorbeyond 2016                 -0.012244
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016    -0.006207
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016           -0.025398
+Insemfactorbetween 2 and 5:perfactorbeyond 2016              -0.016654
+Insemfactorbeyond 5:perfactorbeyond 2016                     -0.025858
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016  -0.016223
+fprfactormore than 50%:perfactorbetween 2014 and 2016         0.003215
+fprfactorbetween 10% and 50%:perfactorbeyond 2016            -0.028758
+fprfactormore than 50%:perfactorbeyond 2016                  -0.030727
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016   0.009168
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016  0.014381
+SCCfactormore than 1000:perfactorbetween 2014 and 2016        0.011678
+SCCfactorbetween 200 and 600:perfactorbeyond 2016             0.023382
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016            0.038126
+SCCfactormore than 1000:perfactorbeyond 2016                  0.046622
+1st parity                                                   -0.364785
+2nd parity                                                   -0.545065
+3-4th parity                                                 -0.823750
+more than 4 parities                                         -1.330947
+                                                              Std. Err
+(Intercept)                                                   0.001716
+LactValue1more than 100                                       0.000734
+Insemfactorbetween 2 and 5                                    0.000885
+Insemfactorbeyond 5                                           0.002879
+SCCfactorbetween 200 and 600                                  0.000695
+SCCfactorbetween 600 and 1000                                 0.001077
+SCCfactormore than 1000                                       0.001183
+fprfactorbetween 10% and 50%                                  0.000829
+fprfactormore than 50%                                        0.002343
+perfactorbetween 2014 and 2016                                0.000925
+perfactorbeyond 2016                                          0.001070
+LactValue1more than 100:perfactorbetween 2014 and 2016        0.000864
+LactValue1more than 100:perfactorbeyond 2016                  0.000906
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016     0.000959
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016            0.003159
+Insemfactorbetween 2 and 5:perfactorbeyond 2016               0.001072
+Insemfactorbeyond 5:perfactorbeyond 2016                      0.003402
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016   0.000952
+fprfactormore than 50%:perfactorbetween 2014 and 2016         0.003787
+fprfactorbetween 10% and 50%:perfactorbeyond 2016             0.001104
+fprfactormore than 50%:perfactorbeyond 2016                   0.006891
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016   0.000871
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016  0.001435
+SCCfactormore than 1000:perfactorbetween 2014 and 2016        0.001381
+SCCfactorbetween 200 and 600:perfactorbeyond 2016             0.000941
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016            0.001525
+SCCfactormore than 1000:perfactorbeyond 2016                  0.001494
+1st parity                                                    0.000997
+2nd parity                                                    0.001137
+3-4th parity                                                  0.001482
+more than 4 parities                                          0.002128
+                                                             (Naive SE)       z
+(Intercept)                                                    0.000392 3789.43
+LactValue1more than 100                                        0.000419  200.58
+Insemfactorbetween 2 and 5                                     0.000373  100.02
+Insemfactorbeyond 5                                            0.001026   46.41
+SCCfactorbetween 200 and 600                                   0.000420  -95.53
+SCCfactorbetween 600 and 1000                                  0.000700  -78.95
+SCCfactormore than 1000                                        0.000564 -127.35
+fprfactorbetween 10% and 50%                                   0.000366   76.09
+fprfactormore than 50%                                         0.001029   32.53
+perfactorbetween 2014 and 2016                                 0.000512  -19.87
+perfactorbeyond 2016                                           0.000490  -56.52
+LactValue1more than 100:perfactorbetween 2014 and 2016         0.000645    9.43
+LactValue1more than 100:perfactorbeyond 2016                   0.000618  -13.51
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016      0.000580   -6.47
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016             0.001502   -8.04
+Insemfactorbetween 2 and 5:perfactorbeyond 2016                0.000563  -15.53
+Insemfactorbeyond 5:perfactorbeyond 2016                       0.001481   -7.60
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016    0.000570  -17.04
+fprfactormore than 50%:perfactorbetween 2014 and 2016          0.001973    0.85
+fprfactorbetween 10% and 50%:perfactorbeyond 2016              0.000562  -26.05
+fprfactormore than 50%:perfactorbeyond 2016                    0.002184   -4.46
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016    0.000662   10.52
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016   0.001125   10.02
+SCCfactormore than 1000:perfactorbetween 2014 and 2016         0.000875    8.46
+SCCfactorbetween 200 and 600:perfactorbeyond 2016              0.000662   24.86
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016             0.001150   25.00
+SCCfactormore than 1000:perfactorbeyond 2016                   0.000892   31.21
+1st parity                                                     0.000329 -365.88
+2nd parity                                                     0.000347 -479.42
+3-4th parity                                                   0.000360 -555.84
+more than 4 parities                                           0.000524 -625.36
+                                                                   p
+(Intercept)                                                  < 2e-16
+LactValue1more than 100                                      < 2e-16
+Insemfactorbetween 2 and 5                                   < 2e-16
+Insemfactorbeyond 5                                          < 2e-16
+SCCfactorbetween 200 and 600                                 < 2e-16
+SCCfactorbetween 600 and 1000                                < 2e-16
+SCCfactormore than 1000                                      < 2e-16
+fprfactorbetween 10% and 50%                                 < 2e-16
+fprfactormore than 50%                                       < 2e-16
+perfactorbetween 2014 and 2016                               < 2e-16
+perfactorbeyond 2016                                         < 2e-16
+LactValue1more than 100:perfactorbetween 2014 and 2016       < 2e-16
+LactValue1more than 100:perfactorbeyond 2016                 < 2e-16
+Insemfactorbetween 2 and 5:perfactorbetween 2014 and 2016    9.9e-11
+Insemfactorbeyond 5:perfactorbetween 2014 and 2016           9.0e-16
+Insemfactorbetween 2 and 5:perfactorbeyond 2016              < 2e-16
+Insemfactorbeyond 5:perfactorbeyond 2016                     3.0e-14
+fprfactorbetween 10% and 50%:perfactorbetween 2014 and 2016  < 2e-16
+fprfactormore than 50%:perfactorbetween 2014 and 2016            0.4
+fprfactorbetween 10% and 50%:perfactorbeyond 2016            < 2e-16
+fprfactormore than 50%:perfactorbeyond 2016                  8.2e-06
+SCCfactorbetween 200 and 600:perfactorbetween 2014 and 2016  < 2e-16
+SCCfactorbetween 600 and 1000:perfactorbetween 2014 and 2016 < 2e-16
+SCCfactormore than 1000:perfactorbetween 2014 and 2016       < 2e-16
+SCCfactorbetween 200 and 600:perfactorbeyond 2016            < 2e-16
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016           < 2e-16
+SCCfactormore than 1000:perfactorbeyond 2016                 < 2e-16
+1st parity                                                   < 2e-16
+2nd parity                                                   < 2e-16
+3-4th parity                                                 < 2e-16
+more than 4 parities                                         < 2e-16
+
+Scale:
+          1st parity           2nd parity         3-4th parity 
+               0.694                0.580                0.439 
+more than 4 parities 
+               0.264 
+
+Log Normal distribution
+Loglik(model)= -24680994   Loglik(intercept only)= -25090491
+	Chisq= 818994.3 on 26 degrees of freedom, p= 0 
+(Loglikelihood assumes independent observations)
+Number of Newton-Raphson Iterations: 8 
+n= 114506105 
+
+[1]       31 49362050

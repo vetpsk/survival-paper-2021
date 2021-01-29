@@ -1,0 +1,26 @@
+Call:
+survdiff(formula = SurvivalObject ~ Parity1, data = sampledf)
+
+              N Observed Expected (O-E)^2/E (O-E)^2/V
+Parity1=1 88065     2347     2207      8.91     12.42
+Parity1=2 62632     1847     2076     25.30     33.85
+Parity1=3 68060     2761     2835      1.94      2.95
+Parity1=4 25237     1450     1287     20.65     25.47
+
+ Chisq= 57.6  on 3 degrees of freedom, p= 2e-12 
+Call:
+survdiff(formula = SurvivalObject ~ fpr1, data = sampledf)
+
+            N Observed Expected (O-E)^2/E (O-E)^2/V
+fpr1=0  26911      849      855   0.04286    0.0478
+fpr1=1 217083     7556     7550   0.00485    0.0478
+
+ Chisq= 0  on 1 degrees of freedom, p= 0.8 
+Call:
+survdiff(formula = SurvivalObject ~ SCC1, data = sampledf)
+
+            N Observed Expected (O-E)^2/E (O-E)^2/V
+SCC1=1 212343     5757     7275       317      2356
+SCC1=2  31651     2648     1130      2039      2356
+
+ Chisq= 2356  on 1 degrees of freedom, p= <2e-16 

@@ -1,0 +1,32 @@
+Term	Value	Std.Err	NaiveSE	z	p
+(Intercept)	5,35264	0,04232	0,01341	126,49	< 2e-16
+LactValue1more than 100	0,10461	0,00853	0,00609	12,26	< 2e-16
+lastparity2nd parity	0,28255	0,01728	0,01596	16,36	< 2e-16
+lastparity3-4th parity	0,63711	0,02206	0,01467	28,89	< 2e-16
+lastparitymore than 4 parities	1,16872	0,03615	0,01565	32,33	< 2e-16
+Insemfactormore than 2	0,10733	0,02277	0,01131	4,71	2,40E-06
+SCCfactorbetween 200 and 400	-0,05082	0,01618	0,0131	-3,14	0,00168
+SCCfactorbetween 400 and 600	-0,0561	0,01443	0,01939	-3,89	0,0001
+SCCfactorbetween 600 and 1000	-0,07651	0,02319	0,02054	-3,3	0,00097
+SCCfactormore than 1000	-0,12587	0,02983	0,0165	-4,22	2,40E-05
+fprfactorBetween 10% and 50%	0,06065	0,01963	0,00568	3,09	0,002
+fprfactormore than 50%	0,17776	0,07247	0,01797	2,45	0,01417
+perfactorbetween 2013 and 2016	-0,03685	0,03246	0,02068	-1,14	0,25629
+perfactorbeyond 2016	-0,06242	0,03179	0,01651	-1,96	0,04959
+lastparity2nd parity:perfactorbetween 2013 and 2016	0,01348	0,03384	0,0256	0,4	0,69038
+lastparity3-4th parity:perfactorbetween 2013 and 2016	0,04287	0,02279	0,02334	1,88	0,06002
+lastparitymore than 4 parities:perfactorbetween 2013 and 2016	0,00695	0,03936	0,02442	0,18	0,85975
+lastparity2nd parity:perfactorbeyond 2016	0,03426	0,02514	0,02081	1,36	0,17297
+lastparity3-4th parity:perfactorbeyond 2016	0,07773	0,02022	0,01907	3,84	0,00012
+lastparitymore than 4 parities:perfactorbeyond 2016	0,01858	0,03643	0,02034	0,51	0,60998
+Insemfactormore than 2:perfactorbetween 2013 and 2016	0,05361	0,0166	0,01763	3,23	0,00124
+Insemfactormore than 2:perfactorbeyond 2016	-0,02332	0,02469	0,01464	-0,94	0,34481
+SCCfactorbetween 200 and 400:perfactorbetween 2013 and 2016	0,044	0,02507	0,02087	1,76	0,07919
+SCCfactorbetween 400 and 600:perfactorbetween 2013 and 2016	0,02242	0,02459	0,03122	0,91	0,36209
+SCCfactorbetween 600 and 1000:perfactorbetween 2013 and 2016	-0,04167	0,03372	0,03089	-1,24	0,21655
+SCCfactormore than 1000:perfactorbetween 2013 and 2016	0,02666	0,03231	0,02561	0,83	0,40927
+SCCfactorbetween 200 and 400:perfactorbeyond 2016	0,00872	0,02921	0,01773	0,3	0,76529
+SCCfactorbetween 400 and 600:perfactorbeyond 2016	0,04689	0,02433	0,02712	1,93	0,05394
+SCCfactorbetween 600 and 1000:perfactorbeyond 2016	0,08045	0,035	0,02862	2,3	0,02151
+SCCfactormore than 1000:perfactorbeyond 2016	0,04402	0,03617	0,02197	1,22	0,22356
+Log(scale)	-1,41477	0,05	0,01224	-28,29	< 2e-16
