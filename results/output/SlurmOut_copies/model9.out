@@ -1,0 +1,366 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> 
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:data.table’:
+
+    between, first, last
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+  omp_get_num_procs()            4
+  R_DATATABLE_NUM_PROCS_PERCENT  unset (default 50)
+  R_DATATABLE_NUM_THREADS        unset
+  omp_get_thread_limit()         2147483647
+  omp_get_max_threads()          4
+  OMP_THREAD_LIMIT               unset
+  OMP_NUM_THREADS                unset
+  RestoreAfterFork               true
+  data.table is using 2 threads. See ?setDTthreads.
+Input contains no \n. Taking this to be a filename to open
+[01] Check arguments
+  Using 2 threads (omp_get_max_threads()=4, nth=2)
+  NAstrings = [<<NA>>]
+  None of the NAstrings look like numbers.
+  show progress = 0
+  0/1 column will be read as integer
+[02] Opening the file
+  Opening file survivaldata.csv
+  File opened, size = 22.08GB (23711914322 bytes).
+  Memory mapped ok
+[03] Detect and skip BOM
+[04] Arrange mmap to be \0 terminated
+  \n has been found in the input and different lines can end with different line endings (e.g. mixed \n and \r\n in one file). This is common and ideal.
+[05] Skipping initial rows if needed
+  Positioned on line 1 starting: <<AnimalIdentifier,BirthDate,Her>>
+[06] Detect separator, quoting rule, and ncolumns
+  Detecting sep automatically ...
+  sep=','  with 100 lines of 18 fields using quote rule 0
+  Detected 18 columns on line 1. This line is either column names or first data row. Line starts as: <<AnimalIdentifier,BirthDate,Her>>
+  Quote rule picked = 0
+  fill=false and the most number of columns found is 18
+[07] Detect column types, good nrow estimate and whether first row is column names
+  'header' changed by user from 'auto' to true
+  Number of sampling jump points = 100 because (23711914321 bytes from row 1 to eof) / (2 * 19885 jump0size) == 596226
+  Type codes (jump 000)    : AA5AA5AAAAAA775AAA  Quote rule 0
+  Type codes (jump 100)    : AA5AA5AAAAAA775AAA  Quote rule 0
+  =====
+  Sampled 10049 rows (handled \n inside quoted fields) at 101 jump points
+  Bytes from first data row on line 2 to the end of last row: 23711914141
+  Line length: mean=206.79 sd=13.45 min=165 max=261
+  Estimated number of rows: 23711914141 / 206.79 = 114664250
+  Initial alloc = 131813307 rows (114664250 + 14%) using bytes/max(mean-2*sd,min) clamped between [1.1*estn, 2.0*estn]
+  =====
+[08] Assign column names
+[09] Apply user overrides on column types
+  After 0 type and 0 drop user overrides : AA5AA5AAAAAA775AAA
+[10] Allocate memory for the datatable
+  Allocating 18 column slots (18 - 0 dropped) with 131813307 rows
+[11] Read the data
+  jumps=[0..22614), chunk_size=1048550, total_size=23711914141
+Read 114498459 rows x 18 columns from 22.08GB (23711914322 bytes) file in 24:38.750 wall clock time
+[12] Finalizing the datatable
+  Type counts:
+         3 : int32     '5'
+         2 : float64   '7'
+        13 : string    'A'
+=============================
+   0.000s (  0%) Memory map 22.083GB file
+   3.356s (  0%) sep=',' ncol=18 and header detection
+   0.000s (  0%) Column type detection using 10049 sample rows
+  19.041s (  1%) Allocation of 131813307 rows x 18 cols (16.204GB) of which 114498459 ( 87%) rows used
+1456.353s ( 98%) Reading 22614 chunks (0 swept) of 1.000MB (each chunk 5063 rows) using 2 threads
+   +   34.309s (  2%) Parse to row-major thread buffers (grown 0 times)
+   + 1421.841s ( 96%) Transpose
+   +    0.202s (  0%) Waiting
+   0.000s (  0%) Rereading 0 columns due to out-of-sample type exceptions
+1478.750s        Total
+Classes ‘data.table’ and 'data.frame':	114498459 obs. of  18 variables:
+ $ AnimalIdentifier: chr  "AT 0026853806" "AT 0026853806" "AT 0026853806" "AT 0026853806" ...
+ $ BirthDate       : chr  "2008-12-12" "2008-12-12" "2008-12-12" "2008-12-12" ...
+ $ HerdIdentifier  : int  5904913 5904913 5904913 5904913 5904913 5904913 5904913 5904913 5904913 5904913 ...
+ $ parity          : chr  "3-4th parity" "3-4th parity" "3-4th parity" "3-4th parity" ...
+ $ TestDate        : chr  "2014-01-24" "2014-03-08" "2014-04-20" "2014-05-30" ...
+ $ event           : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ max_date        : chr  "2015-12-15" "2015-12-15" "2015-12-15" "2015-12-15" ...
+ $ min_date        : chr  "2014-01-24" "2014-01-24" "2014-01-24" "2014-01-24" ...
+ $ SCCfactor       : chr  "below 200" "below 200" "below 200" "below 200" ...
+ $ fprfactor       : chr  "below 10%" "below 10%" "below 10%" "below 10%" ...
+ $ fprfactor2      : chr  "below 10%" "below 10%" "below 10%" "below 10%" ...
+ $ lastparity      : chr  "3-4th parity" "3-4th parity" "3-4th parity" "3-4th parity" ...
+ $ tstart          : num  267 273 279 285 291 ...
+ $ tstop           : num  273 279 285 291 297 ...
+ $ LactValue       : int  83 82 78 83 85 88 87 78 90 80 ...
+ $ LactValue1      : chr  "less than 100" "less than 100" "less than 100" "less than 100" ...
+ $ perfactor       : chr  "between 2014 and 2016" "between 2014 and 2016" "between 2014 and 2016" "between 2014 and 2016" ...
+ $ Insemfactor     : chr  "below 2" "below 2" "below 2" "below 2" ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+ AnimalIdentifier    BirthDate         HerdIdentifier     
+ Length:114498459   Length:114498459   6430782:   121698  
+ Class :character   Class :character   8266731:    83131  
+ Mode  :character   Mode  :character   8744570:    65165  
+                                       6919701:    50714  
+                                       213682 :    50396  
+                                       7265484:    46285  
+                                       (Other):114081070  
+                  parity           TestDate             event        
+ 1st parity          :34515699   Length:114498459   Min.   :0.00000  
+ 2nd parity          :28436315   Class :character   1st Qu.:0.00000  
+ 3-4th parity        :35089630   Mode  :character   Median :0.00000  
+ more than 4 parities:16456815                      Mean   :0.02525  
+                                                    3rd Qu.:0.00000  
+                                                    Max.   :1.00000  
+                                                                     
+   max_date           min_date                        SCCfactor       
+ Length:114498459   Length:114498459   below 200           :91906918  
+ Class :character   Class :character   between 200 and 600 :15256654  
+ Mode  :character   Mode  :character   between 600 and 1000: 3202312  
+                                       more than 1000      : 4132575  
+                                                                      
+                                                                      
+                                                                      
+               fprfactor                      fprfactor2       
+ below 10%          :70061334   below 10%          :108017063  
+ between 10% and 50%:42643952   Between 10% and 50%:  6412028  
+ more than 50%      : 1793173   more than 50%      :    69368  
+                                                               
+                                                               
+                                                               
+                                                               
+  lastparity            tstart           tstop          LactValue     
+ Length:114498459   Min.   :-152.3   Min.   :-147.1   Min.   :  0.00  
+ Class :character   1st Qu.: 157.4   1st Qu.: 163.9   1st Qu.: 92.00  
+ Mode  :character   Median : 214.0   Median : 220.3   Median :100.00  
+                    Mean   : 237.6   Mean   : 243.5   Mean   : 97.14  
+                    3rd Qu.: 293.1   3rd Qu.: 299.0   3rd Qu.:109.00  
+                    Max.   :1193.6   Max.   :1198.1   Max.   :302.00  
+                                                                      
+         LactValue1                       perfactor       
+ less than 100:57318429   before 2014          :49609053  
+ more than 100:57180030   between 2014 and 2016:33651029  
+                          beyond 2016          :31238377  
+                                                          
+                                                          
+                                                          
+                                                          
+          Insemfactor      
+ below 2        :63749065  
+ between 2 and 5:47404909  
+ beyond 5       : 3344485  
+                           
+                           
+                           
+                           
+ AnimalIdentifier    BirthDate         HerdIdentifier     
+ Length:114498459   Length:114498459   6430782:   121698  
+ Class :character   Class :character   8266731:    83131  
+ Mode  :character   Mode  :character   8744570:    65165  
+                                       6919701:    50714  
+                                       213682 :    50396  
+                                       7265484:    46285  
+                                       (Other):114081070  
+                  parity           TestDate             event        
+ 1st parity          :34515699   Length:114498459   Min.   :0.00000  
+ 2nd parity          :28436315   Class :character   1st Qu.:0.00000  
+ 3-4th parity        :35089630   Mode  :character   Median :0.00000  
+ more than 4 parities:16456815                      Mean   :0.02525  
+                                                    3rd Qu.:0.00000  
+                                                    Max.   :1.00000  
+                                                                     
+   max_date           min_date                        SCCfactor       
+ Length:114498459   Length:114498459   below 200           :91906918  
+ Class :character   Class :character   between 200 and 600 :15256654  
+ Mode  :character   Mode  :character   between 600 and 1000: 3202312  
+                                       more than 1000      : 4132575  
+                                                                      
+                                                                      
+                                                                      
+               fprfactor                      fprfactor2       
+ below 10%          :70061334   below 10%          :108017063  
+ between 10% and 50%:42643952   Between 10% and 50%:  6412028  
+ more than 50%      : 1793173   more than 50%      :    69368  
+                                                               
+                                                               
+                                                               
+                                                               
+  lastparity            tstart              tstop             LactValue     
+ Length:114498459   Min.   :   0.1429   Min.   :   0.1429   Min.   :  0.00  
+ Class :character   1st Qu.: 157.4286   1st Qu.: 163.8571   1st Qu.: 92.00  
+ Mode  :character   Median : 214.0000   Median : 220.2857   Median :100.00  
+                    Mean   : 237.6474   Mean   : 243.4845   Mean   : 97.14  
+                    3rd Qu.: 293.1429   3rd Qu.: 299.0000   3rd Qu.:109.00  
+                    Max.   :1193.5714   Max.   :1198.0714   Max.   :302.00  
+                    NA's   :40          NA's   :38                          
+         LactValue1                       perfactor       
+ less than 100:57318429   before 2014          :49609053  
+ more than 100:57180030   between 2014 and 2016:33651029  
+                          beyond 2016          :31238377  
+                                                          
+                                                          
+                                                          
+                                                          
+          Insemfactor      
+ below 2        :63749065  
+ between 2 and 5:47404909  
+ beyond 5       : 3344485  
+                           
+                           
+                           
+                           
+
+Attaching package: ‘MASS’
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+
+Call:
+survreg(formula = Surv(tstart, tstop, event = event, type = "interval") ~ 
+    perfactor + perfactor:LactValue1 + perfactor:SCCfactor + 
+        perfactor:fprfactor + perfactor:parity + LactValue1 + 
+        parity + Insemfactor + SCCfactor + fprfactor + fprfactor2 + 
+        frailty(HerdIdentifier), data = df2, dist = "lognormal")
+                                                                 Value
+(Intercept)                                                   5.506023
+perfactorbetween 2014 and 2016                               -0.004830
+perfactorbeyond 2016                                         -0.050363
+LactValue1more than 100                                       0.109836
+parity2nd parity                                              0.291536
+parity3-4th parity                                            0.622377
+paritymore than 4 parities                                    1.031228
+Insemfactorbetween 2 and 5                                    0.083102
+Insemfactorbeyond 5                                           0.123985
+SCCfactorbetween 200 and 600                                 -0.054474
+SCCfactorbetween 600 and 1000                                -0.084618
+SCCfactormore than 1000                                      -0.144391
+fprfactorbetween 10% and 50%                                  0.050872
+fprfactormore than 50%                                        0.050825
+fprfactor2Between 10% and 50%                                -0.007426
+fprfactor2more than 50%                                      -0.047720
+perfactorbetween 2014 and 2016:LactValue1more than 100        0.001628
+perfactorbeyond 2016:LactValue1more than 100                 -0.010296
+perfactorbetween 2014 and 2016:SCCfactorbetween 200 and 600   0.006355
+perfactorbeyond 2016:SCCfactorbetween 200 and 600             0.009158
+perfactorbetween 2014 and 2016:SCCfactorbetween 600 and 1000  0.014100
+perfactorbeyond 2016:SCCfactorbetween 600 and 1000            0.025434
+perfactorbetween 2014 and 2016:SCCfactormore than 1000        0.013672
+perfactorbeyond 2016:SCCfactormore than 1000                  0.034206
+perfactorbetween 2014 and 2016:fprfactorbetween 10% and 50%  -0.015790
+perfactorbeyond 2016:fprfactorbetween 10% and 50%            -0.026263
+perfactorbetween 2014 and 2016:fprfactormore than 50%        -0.010715
+perfactorbeyond 2016:fprfactormore than 50%                  -0.031404
+perfactorbetween 2014 and 2016:parity2nd parity              -0.005333
+perfactorbeyond 2016:parity2nd parity                         0.005490
+perfactorbetween 2014 and 2016:parity3-4th parity            -0.004013
+perfactorbeyond 2016:parity3-4th parity                       0.011893
+perfactorbetween 2014 and 2016:paritymore than 4 parities    -0.024979
+perfactorbeyond 2016:paritymore than 4 parities              -0.010053
+Log(scale)                                                   -1.398275
+                                                             Std. Error
+(Intercept)                                                    0.008469
+perfactorbetween 2014 and 2016                                 0.000461
+perfactorbeyond 2016                                           0.000445
+LactValue1more than 100                                        0.000252
+parity2nd parity                                               0.000346
+parity3-4th parity                                             0.000325
+paritymore than 4 parities                                     0.000369
+Insemfactorbetween 2 and 5                                     0.000156
+Insemfactorbeyond 5                                            0.000402
+SCCfactorbetween 200 and 600                                   0.000277
+SCCfactorbetween 600 and 1000                                  0.000492
+SCCfactormore than 1000                                        0.000402
+fprfactorbetween 10% and 50%                                   0.000238
+fprfactormore than 50%                                         0.000719
+fprfactor2Between 10% and 50%                                  0.000318
+fprfactor2more than 50%                                        0.002564
+perfactorbetween 2014 and 2016:LactValue1more than 100         0.000393
+perfactorbeyond 2016:LactValue1more than 100                   0.000375
+perfactorbetween 2014 and 2016:SCCfactorbetween 200 and 600    0.000442
+perfactorbeyond 2016:SCCfactorbetween 200 and 600              0.000443
+perfactorbetween 2014 and 2016:SCCfactorbetween 600 and 1000   0.000796
+perfactorbeyond 2016:SCCfactorbetween 600 and 1000             0.000812
+perfactorbetween 2014 and 2016:SCCfactormore than 1000         0.000628
+perfactorbeyond 2016:SCCfactormore than 1000                   0.000641
+perfactorbetween 2014 and 2016:fprfactorbetween 10% and 50%    0.000369
+perfactorbeyond 2016:fprfactorbetween 10% and 50%              0.000362
+perfactorbetween 2014 and 2016:fprfactormore than 50%          0.001331
+perfactorbeyond 2016:fprfactormore than 50%                    0.001409
+perfactorbetween 2014 and 2016:parity2nd parity                0.000550
+perfactorbeyond 2016:parity2nd parity                          0.000525
+perfactorbetween 2014 and 2016:parity3-4th parity              0.000512
+perfactorbeyond 2016:parity3-4th parity                        0.000491
+perfactorbetween 2014 and 2016:paritymore than 4 parities      0.000575
+perfactorbeyond 2016:paritymore than 4 parities                0.000559
+Log(scale)                                                     0.000382
+                                                                    z       p
+(Intercept)                                                    650.15 < 2e-16
+perfactorbetween 2014 and 2016                                 -10.47 < 2e-16
+perfactorbeyond 2016                                          -113.21 < 2e-16
+LactValue1more than 100                                        435.22 < 2e-16
+parity2nd parity                                               841.61 < 2e-16
+parity3-4th parity                                            1913.36 < 2e-16
+paritymore than 4 parities                                    2794.06 < 2e-16
+Insemfactorbetween 2 and 5                                     533.33 < 2e-16
+Insemfactorbeyond 5                                            308.45 < 2e-16
+SCCfactorbetween 200 and 600                                  -196.78 < 2e-16
+SCCfactorbetween 600 and 1000                                 -171.89 < 2e-16
+SCCfactormore than 1000                                       -359.61 < 2e-16
+fprfactorbetween 10% and 50%                                   213.37 < 2e-16
+fprfactormore than 50%                                          70.65 < 2e-16
+fprfactor2Between 10% and 50%                                  -23.37 < 2e-16
+fprfactor2more than 50%                                        -18.61 < 2e-16
+perfactorbetween 2014 and 2016:LactValue1more than 100           4.15 3.4e-05
+perfactorbeyond 2016:LactValue1more than 100                   -27.45 < 2e-16
+perfactorbetween 2014 and 2016:SCCfactorbetween 200 and 600     14.39 < 2e-16
+perfactorbeyond 2016:SCCfactorbetween 200 and 600               20.66 < 2e-16
+perfactorbetween 2014 and 2016:SCCfactorbetween 600 and 1000    17.72 < 2e-16
+perfactorbeyond 2016:SCCfactorbetween 600 and 1000              31.31 < 2e-16
+perfactorbetween 2014 and 2016:SCCfactormore than 1000          21.78 < 2e-16
+perfactorbeyond 2016:SCCfactormore than 1000                    53.38 < 2e-16
+perfactorbetween 2014 and 2016:fprfactorbetween 10% and 50%    -42.77 < 2e-16
+perfactorbeyond 2016:fprfactorbetween 10% and 50%              -72.51 < 2e-16
+perfactorbetween 2014 and 2016:fprfactormore than 50%           -8.05 8.2e-16
+perfactorbeyond 2016:fprfactormore than 50%                    -22.29 < 2e-16
+perfactorbetween 2014 and 2016:parity2nd parity                 -9.69 < 2e-16
+perfactorbeyond 2016:parity2nd parity                           10.46 < 2e-16
+perfactorbetween 2014 and 2016:parity3-4th parity               -7.84 4.4e-15
+perfactorbeyond 2016:parity3-4th parity                         24.21 < 2e-16
+perfactorbetween 2014 and 2016:paritymore than 4 parities      -43.47 < 2e-16
+perfactorbeyond 2016:paritymore than 4 parities                -18.00 < 2e-16
+Log(scale)                                                   -3665.16 < 2e-16
+
+Scale= 0.247 
+
+Log Normal distribution
+Loglik(model)= -23081163   Loglik(intercept only)= -26682527
+	Chisq= 7202729 on 13963.2 degrees of freedom, p= 0 
+Number of Newton-Raphson Iterations: 10 20 
+n= 114498419 
+
+[1]    13965.2 46190256.0

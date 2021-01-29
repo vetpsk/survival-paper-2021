@@ -1,0 +1,95 @@
+# A tibble: 3 x 4
+  perfactor             animals farms      obs
+  <fct>                   <int> <int>    <int>
+1 before 2014           2681330 13725 49609053
+2 between 2014 and 2016 2346809 13558 33651029
+3 beyond 2016           2223594 12753 31238377
+                       
+                         below 2 between 2 and 5 beyond 5
+  before 2014           27980771        20289146  1339136
+  between 2014 and 2016 18505004        14103125  1042900
+  beyond 2016           17263290        13012638   962449
+                       
+                        below 200 between 200 and 600 between 600 and 1000
+  before 2014            38848794             7418431              1492422
+  between 2014 and 2016  27134281             4359094               931291
+  beyond 2016            25923843             3479129               778599
+                       
+                        more than 1000
+  before 2014                  1849406
+  between 2014 and 2016        1226363
+  beyond 2016                  1056806
+                       
+                        below 10% between 10% and 50% more than 50%
+  before 2014            28216561            20307798       1084694
+  between 2014 and 2016  20978280            12265578        407171
+  beyond 2016            20866493            10070576        301308
+                       
+                        below 10% Between 10% and 50% more than 50%
+  before 2014            47010526             2569371         29156
+  between 2014 and 2016  31801547             1832615         16867
+  beyond 2016            29204990             2010042         23345
+                       
+                        less than 100 more than 100
+  before 2014                24575559      25033494
+  between 2014 and 2016      16897419      16753610
+  beyond 2016                15845451      15392926
+[1] "parity distribution per perfactor"
+# A tibble: 12 x 4
+# Groups:   perfactor [3]
+   perfactor             parity               animals      obs
+   <fct>                 <fct>                  <int>    <int>
+ 1 before 2014           1st parity           1869886 15441479
+ 2 before 2014           2nd parity           1551289 12357571
+ 3 before 2014           3-4th parity         1282889 14680768
+ 4 before 2014           more than 4 parities  554520  7129235
+ 5 between 2014 and 2016 1st parity           1424745 10300905
+ 6 between 2014 and 2016 2nd parity           1180368  8271514
+ 7 between 2014 and 2016 3-4th parity         1046349 10296026
+ 8 between 2014 and 2016 more than 4 parities  456695  4782584
+ 9 beyond 2016           1st parity           1231011  8773315
+10 beyond 2016           2nd parity           1146185  7807230
+11 beyond 2016           3-4th parity         1067487 10112836
+12 beyond 2016           more than 4 parities  466896  4544996
+                      
+                        below 2 between 2 and 5 beyond 5
+  1st parity           20607614        13112628   795457
+  2nd parity           15425449        12154946   855920
+  3-4th parity         18920275        15089327  1080028
+  more than 4 parities  8795727         7048008   613080
+                      
+                       below 200 between 200 and 600 between 600 and 1000
+  1st parity            30966778             2590483               446648
+  2nd parity            23989178             3174241               580825
+  3-4th parity          26436833             5827541              1235963
+  more than 4 parities  10514129             3664389               938876
+                      
+                       more than 1000
+  1st parity                   511790
+  2nd parity                   692071
+  3-4th parity                1589293
+  more than 4 parities        1339421
+                      
+                       below 10% between 10% and 50% more than 50%
+  1st parity            22363337            11695576        456786
+  2nd parity            17680674            10392826        362815
+  3-4th parity          20979680            13538938        571012
+  more than 4 parities   9037643             7016612        402560
+                      
+                       below 10% Between 10% and 50% more than 50%
+  1st parity            32423657             2064807         27235
+  2nd parity            26596944             1819029         20342
+  3-4th parity          33228576             1844409         16645
+  more than 4 parities  15767886              683783          5146
+                      
+                       less than 100 more than 100
+  1st parity                12729707      21785992
+  2nd parity                13252734      15183581
+  3-4th parity              20386452      14703178
+  more than 4 parities      10949536       5507279
+# A tibble: 3 x 3
+  perfactor             mean_age  events
+  <fct>                    <dbl>   <int>
+1 before 2014               239. 1171132
+2 between 2014 and 2016     236.  796547
+3 beyond 2016               237.  923532
