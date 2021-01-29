@@ -1,0 +1,102 @@
+perfactorbefore 2014:Insemfactorbetween 2 and 5               0.074090
+perfactorbetween 2014 and 2016:Insemfactorbetween 2 and 5     0.067994
+perfactorbeyond 2016:Insemfactorbetween 2 and 5               0.059663
+perfactorbefore 2014:Insemfactorbeyond 5                      0.112497
+perfactorbetween 2014 and 2016:Insemfactorbeyond 5            0.095200
+perfactorbeyond 2016:Insemfactorbeyond 5                      0.095318
+
+perfactorbefore 2014:Insemfactorbetween 2 and 5               0.000606
+perfactorbetween 2014 and 2016:Insemfactorbetween 2 and 5     0.000677
+perfactorbeyond 2016:Insemfactorbetween 2 and 5               0.000665
+perfactorbefore 2014:Insemfactorbeyond 5                      0.001728
+perfactorbetween 2014 and 2016:Insemfactorbeyond 5            0.001784
+perfactorbeyond 2016:Insemfactorbeyond 5                      0.001768
+
+
+
+
+
+perfactorbefore 2014:parity2nd parity                         0.296294
+perfactorbetween 2014 and 2016:parity2nd parity               0.291397
+perfactorbeyond 2016:parity2nd parity                         0.302049
+perfactorbefore 2014:parity3-4th parity                       0.631872
+perfactorbetween 2014 and 2016:parity3-4th parity             0.626544
+perfactorbeyond 2016:parity3-4th parity                       0.642337
+perfactorbefore 2014:paritymore than 4 parities               1.052486
+perfactorbetween 2014 and 2016:paritymore than 4 parities     1.026244
+perfactorbeyond 2016:paritymore than 4 parities               1.040409
+
+perfactorbefore 2014:parity2nd parity                         0.000534
+perfactorbetween 2014 and 2016:parity2nd parity               0.000642
+perfactorbeyond 2016:parity2nd parity                         0.000596
+perfactorbefore 2014:parity3-4th parity                       0.000674
+perfactorbetween 2014 and 2016:parity3-4th parity             0.000790
+perfactorbeyond 2016:parity3-4th parity                       0.000744
+perfactorbefore 2014:paritymore than 4 parities               0.001053
+perfactorbetween 2014 and 2016:paritymore than 4 parities     0.001161
+perfactorbeyond 2016:paritymore than 4 parities               0.001140
+
+
+
+
+
+perfactorbefore 2014:LactValue1between 91 to 110              0.114199
+perfactorbetween 2014 and 2016:LactValue1between 91 to 110    0.116312
+perfactorbeyond 2016:LactValue1between 91 to 110              0.113173
+perfactorbefore 2014:LactValue1more than 110                  0.200518
+perfactorbetween 2014 and 2016:LactValue1more than 110        0.202957
+perfactorbeyond 2016:LactValue1more than 110                  0.184899
+
+perfactorbefore 2014:LactValue1between 91 to 110              0.000451
+perfactorbetween 2014 and 2016:LactValue1between 91 to 110    0.000503
+perfactorbeyond 2016:LactValue1between 91 to 110              0.000500
+perfactorbefore 2014:LactValue1more than 110                  0.000783
+perfactorbetween 2014 and 2016:LactValue1more than 110        0.000868
+perfactorbeyond 2016:LactValue1more than 110                  0.000845
+
+
+
+
+perfactorbefore 2014:SCCfactorbetween 200 and 600            -0.048947
+perfactorbetween 2014 and 2016:SCCfactorbetween 200 and 600  -0.040494
+perfactorbeyond 2016:SCCfactorbetween 200 and 600            -0.037769
+perfactorbefore 2014:SCCfactorbetween 600 and 1000           -0.077823
+perfactorbetween 2014 and 2016:SCCfactorbetween 600 and 1000 -0.062016
+perfactorbeyond 2016:SCCfactorbetween 600 and 1000           -0.050886
+perfactorbefore 2014:SCCfactormore than 1000                 -0.140622
+perfactorbetween 2014 and 2016:SCCfactormore than 1000       -0.125741
+perfactorbeyond 2016:SCCfactormore than 1000                 -0.103934
+
+perfactorbefore 2014:SCCfactorbetween 200 and 600             0.000485
+perfactorbetween 2014 and 2016:SCCfactorbetween 200 and 600   0.000554
+perfactorbeyond 2016:SCCfactorbetween 200 and 600             0.000576
+perfactorbefore 2014:SCCfactorbetween 600 and 1000            0.000776
+perfactorbetween 2014 and 2016:SCCfactorbetween 600 and 1000  0.000928
+perfactorbeyond 2016:SCCfactorbetween 600 and 1000            0.000953
+perfactorbefore 2014:SCCfactormore than 1000                  0.000846
+perfactorbetween 2014 and 2016:SCCfactormore than 1000        0.000959
+perfactorbeyond 2016:SCCfactormore than 1000                  0.000948
+
+
+
+
+perfactorbefore 2014:fprfactormore than 50%                   0.039074
+perfactorbetween 2014 and 2016:fprfactormore than 50%         0.037716
+perfactorbeyond 2016:fprfactormore than 50%                   0.023604
+
+perfactorbefore 2014:fprfactormore than 50%                   0.001671
+perfactorbetween 2014 and 2016:fprfactormore than 50%         0.002793
+perfactorbeyond 2016:fprfactormore than 50%                   0.004034
+
+
+
+
+
+
+perfactorbefore 2014:fprfactor2more than 50%                 -0.050091
+perfactorbetween 2014 and 2016:fprfactor2more than 50%       -0.045304
+perfactorbeyond 2016:fprfactor2more than 50%                 -0.020697
+
+perfactorbefore 2014:fprfactor2more than 50%                  0.008659
+perfactorbetween 2014 and 2016:fprfactor2more than 50%        0.009726
+perfactorbeyond 2016:fprfactor2more than 50%                  0.009225

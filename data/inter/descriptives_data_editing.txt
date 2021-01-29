@@ -1,0 +1,279 @@
+/************************************* PMDATA 1 *****************************************/
+AnimalIdentifier     BirthDate              Parity          CalvDate         
+ Length:135694361   Min.   :1950-01-01   Min.   : 0.000   Min.   :1994-06-17  
+ Class :character   1st Qu.:2007-05-02   1st Qu.: 1.000   1st Qu.:2011-05-17  
+ Mode  :character   Median :2010-02-05   Median : 2.000   Median :2014-03-01  
+                    Mean   :2010-01-06   Mean   : 2.677   Mean   :2014-01-26  
+                    3rd Qu.:2012-12-17   3rd Qu.: 4.000   3rd Qu.:2016-10-01  
+                    Max.   :2019-11-04   Max.   :20.000   Max.   :2019-12-31  
+                                                          NA's   :370817      
+     type           HerdIdentifier         TestDate              Kgmilk     
+ Length:135694361   8266731:   136862   Min.   :2009-01-01   Min.   :  0.0  
+ Class :character   6430782:   128782   1st Qu.:2011-11-18   1st Qu.:200.0  
+ Mode  :character   8744570:    66565   Median :2014-09-09   Median :262.0  
+                    277282 :    56023   Mean   :2014-07-31   Mean   :266.2  
+                    6919701:    52951   3rd Qu.:2017-03-30   3rd Qu.:330.0  
+                    213682 :    51278   Max.   :2019-12-31   Max.   :993.0  
+                    (Other):135201900                                       
+      Fat            Protein            SCC           LactValue     
+ Min.   :   0.0   Min.   :   0.0   Min.   :   0.0   Min.   : -9.00  
+ 1st Qu.: 393.0   1st Qu.: 331.0   1st Qu.:  27.0   1st Qu.: 91.00  
+ Median : 441.0   Median : 359.0   Median :  63.0   Median :100.00  
+ Mean   : 439.2   Mean   : 355.7   Mean   : 196.7   Mean   : 95.26  
+ 3rd Qu.: 494.0   3rd Qu.: 389.0   3rd Qu.: 154.0   3rd Qu.:108.00  
+ Max.   :1500.0   Max.   :1500.0   Max.   :9999.0   Max.   :498.00  
+                                                                    
+Classes ‘data.table’ and 'data.frame':	135694361 obs. of  12 variables:
+ $ AnimalIdentifier: chr  "AT 0007841167" "AT 0007841167" "AT 0007841167" "AT 0007841167" ...
+ $ BirthDate       : Date, format: "2013-10-13" "2013-10-13" ...
+ $ Parity          : int  3 3 3 3 3 3 4 4 4 2 ...
+ $ CalvDate        : Date, format: "2017-09-28" "2017-09-28" ...
+ $ type            : chr  "UBN" "UBN" "UBN" "UBN" ...
+ $ HerdIdentifier  : Factor w/ 19885 levels "590","870","919",..: 11631 11631 11631 11631 11631 11631 11631 11631 11631 17827 ...
+ $ TestDate        : Date, format: "2017-12-09" "2018-01-25" ...
+ $ Kgmilk          : int  222 208 207 205 107 21 269 260 223 264 ...
+ $ Fat             : int  350 440 400 382 358 424 335 419 381 430 ...
+ $ Protein         : int  317 325 364 364 366 538 304 323 344 288 ...
+ $ SCC             : int  11 36 48 67 105 1662 24 45 59 76 ...
+ $ LactValue       : int  81 82 82 81 76 72 72 84 82 85 ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+[1] "animals"
+[1] 6033922
+[1] "herds"
+[1] 19885
+[1] 19885
+[1] "rows"
+[1] 135694361
+[1] 12
+
+/************************************* PMDATA 2 *****************************************/
+ AnimalIdentifier     BirthDate              Parity          CalvDate         
+ Length:199000042   Min.   :1950-01-01   Min.   : 0.000   Min.   :1994-06-17  
+ Class :character   1st Qu.:2006-08-21   1st Qu.: 1.000   1st Qu.:2010-09-05  
+ Mode  :character   Median :2008-10-02   Median : 2.000   Median :2012-12-17  
+                    Mean   :2009-01-20   Mean   : 2.856   Mean   :2013-04-28  
+                    3rd Qu.:2011-09-15   3rd Qu.: 4.000   3rd Qu.:2015-11-04  
+                    Max.   :2019-11-04   Max.   :20.000   Max.   :2019-12-31  
+                                                          NA's   :533482      
+     type           HerdIdentifier         TestDate              Kgmilk     
+ Length:199000042   6430782:   181283   Min.   :2009-01-01   Min.   :  0.0  
+ Class :character   8266731:   148407   1st Qu.:2011-03-05   1st Qu.:199.0  
+ Mode  :character   8744570:    91275   Median :2013-06-29   Median :261.0  
+                    277282 :    78843   Mean   :2013-11-03   Mean   :265.8  
+                    6919701:    76280   3rd Qu.:2016-05-11   3rd Qu.:330.0  
+                    213682 :    71428   Max.   :2019-12-31   Max.   :992.0  
+                    (Other):198352526                                       
+      Fat          Protein            SCC           LactValue     
+ Min.   :   0   Min.   :   0.0   Min.   :   0.0   Min.   : -9.00  
+ 1st Qu.: 394   1st Qu.: 331.0   1st Qu.:  29.0   1st Qu.: 90.00  
+ Median : 442   Median : 359.0   Median :  68.0   Median :100.00  
+ Mean   : 440   Mean   : 355.7   Mean   : 208.7   Mean   : 95.09  
+ 3rd Qu.: 495   3rd Qu.: 389.0   3rd Qu.: 166.0   3rd Qu.:108.00  
+ Max.   :1500   Max.   :1500.0   Max.   :9999.0   Max.   :498.00  
+                                                                  
+      year     
+ Min.   :2009  
+ 1st Qu.:2011  
+ Median :2013  
+ Mean   :2013  
+ 3rd Qu.:2016  
+ Max.   :2019  
+               
+Classes ‘data.table’ and 'data.frame':	199000042 obs. of  13 variables:
+ $ AnimalIdentifier: chr  "AT 0007841167" "AT 0007841167" "AT 0007841167" "AT 0007841167" ...
+ $ BirthDate       : Date, format: "2013-10-13" "2013-10-13" ...
+ $ Parity          : int  3 3 3 3 3 3 3 3 3 3 ...
+ $ CalvDate        : Date, format: "2017-09-28" "2017-09-28" ...
+ $ type            : chr  "UBN" "UBN" "UBN" "UBN" ...
+ $ HerdIdentifier  : Factor w/ 17793 levels "590","870","919",..: 10449 10449 10449 10449 10449 10449 10449 10449 10449 10449 ...
+ $ TestDate        : Date, format: "2017-12-09" "2017-12-09" ...
+ $ Kgmilk          : int  222 222 208 208 207 207 205 205 107 107 ...
+ $ Fat             : int  350 350 440 440 400 400 382 382 358 358 ...
+ $ Protein         : int  317 317 325 325 364 364 364 364 366 366 ...
+ $ SCC             : int  11 11 36 36 48 48 67 67 105 105 ...
+ $ LactValue       : int  81 81 82 82 82 82 81 81 76 76 ...
+ $ year            : int  2017 2017 2018 2018 2018 2018 2018 2018 2018 2018 ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+[1] "animals pm2"
+[1] 5868370
+[1] "herds pm2"
+[1] 17793
+[1] 17793
+[1] "rows pm2"
+[1] 199000042
+[1] 13
+
+
+/************************************* PMDATA 3 *****************************************/
+AnimalIdentifier     BirthDate              Parity          CalvDate         
+ Length:193921467   Min.   :1950-01-01   Min.   : 0.000   Min.   :1994-06-17  
+ Class :character   1st Qu.:2006-08-29   1st Qu.: 1.000   1st Qu.:2010-09-19  
+ Mode  :character   Median :2008-10-07   Median : 2.000   Median :2012-12-24  
+                    Mean   :2009-01-21   Mean   : 2.859   Mean   :2013-04-30  
+                    3rd Qu.:2011-09-06   3rd Qu.: 4.000   3rd Qu.:2015-10-24  
+                    Max.   :2019-11-04   Max.   :20.000   Max.   :2019-12-31  
+                                                          NA's   :508568      
+     type           HerdIdentifier         TestDate              Kgmilk   
+ Length:193921467   6430782:   181283   Min.   :2009-01-01   Min.   :  0  
+ Class :character   8266731:   148407   1st Qu.:2011-03-23   1st Qu.:199  
+ Mode  :character   8744570:    91275   Median :2013-07-06   Median :261  
+                    277282 :    78843   Mean   :2013-11-04   Mean   :266  
+                    6919701:    76280   3rd Qu.:2016-04-26   3rd Qu.:330  
+                    213682 :    71428   Max.   :2019-12-31   Max.   :992  
+                    (Other):193273951                                     
+      Fat          Protein            SCC           LactValue    
+ Min.   :   0   Min.   :   0.0   Min.   :   0.0   Min.   : -9.0  
+ 1st Qu.: 394   1st Qu.: 331.0   1st Qu.:  29.0   1st Qu.: 90.0  
+ Median : 442   Median : 359.0   Median :  68.0   Median :100.0  
+ Mean   : 440   Mean   : 355.8   Mean   : 208.6   Mean   : 95.1  
+ 3rd Qu.: 494   3rd Qu.: 389.0   3rd Qu.: 166.0   3rd Qu.:108.0  
+ Max.   :1500   Max.   :1500.0   Max.   :9999.0   Max.   :498.0  
+                                                                 
+      year     
+ Min.   :2009  
+ 1st Qu.:2011  
+ Median :2013  
+ Mean   :2013  
+ 3rd Qu.:2016  
+ Max.   :2019  
+               
+Classes ‘data.table’ and 'data.frame':	193921467 obs. of  13 variables:
+ $ AnimalIdentifier: chr  "AT 0007841167" "AT 0007841167" "AT 0007841167" "AT 0007841167" ...
+ $ BirthDate       : Date, format: "2013-10-13" "2013-10-13" ...
+ $ Parity          : int  3 3 3 3 3 3 3 3 3 3 ...
+ $ CalvDate        : Date, format: "2017-09-28" "2017-09-28" ...
+ $ type            : chr  "UBN" "UBN" "UBN" "UBN" ...
+ $ HerdIdentifier  : Factor w/ 15916 levels "590","870","919",..: 9315 9315 9315 9315 9315 9315 9315 9315 9315 9315 ...
+ $ TestDate        : Date, format: "2017-12-09" "2017-12-09" ...
+ $ Kgmilk          : int  222 222 208 208 207 207 205 205 107 107 ...
+ $ Fat             : int  350 350 440 440 400 400 382 382 358 358 ...
+ $ Protein         : int  317 317 325 325 364 364 364 364 366 366 ...
+ $ SCC             : int  11 11 36 36 48 48 67 67 105 105 ...
+ $ LactValue       : int  81 81 82 82 82 82 81 81 76 76 ...
+ $ year            : int  2017 2017 2018 2018 2018 2018 2018 2018 2018 2018 ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+[1] "animals pm3"
+[1] 5681833
+[1] "herds pm3"
+[1] 15916
+[1] 15916
+[1] "rows pm3"
+[1] 193921467
+[1] 13
+
+/************************************* PMDATA 4 *****************************************/
+ AnimalIdentifier     BirthDate              Parity          CalvDate         
+ Length:186759967   Min.   :1950-01-01   Min.   : 0.000   Min.   :1995-03-20  
+ Class :character   1st Qu.:2006-08-25   1st Qu.: 1.000   1st Qu.:2010-09-14  
+ Mode  :character   Median :2008-10-02   Median : 2.000   Median :2012-12-14  
+                    Mean   :2009-01-16   Mean   : 2.861   Mean   :2013-04-25  
+                    3rd Qu.:2011-08-31   3rd Qu.: 4.000   3rd Qu.:2015-10-20  
+                    Max.   :2019-11-04   Max.   :20.000   Max.   :2019-12-31  
+                                                          NA's   :448172      
+     type           HerdIdentifier         TestDate              Kgmilk     
+ Length:186759967   6430782:   181220   Min.   :2009-01-01   Min.   :  0.0  
+ Class :character   8266731:   145443   1st Qu.:2011-03-16   1st Qu.:200.0  
+ Mode  :character   8744570:    91275   Median :2013-06-26   Median :262.0  
+                    277282 :    78843   Mean   :2013-10-30   Mean   :266.8  
+                    6919701:    75973   3rd Qu.:2016-04-21   3rd Qu.:331.0  
+                    213682 :    71428   Max.   :2019-12-31   Max.   :992.0  
+                    (Other):186115785                                       
+      Fat            Protein            SCC           LactValue     
+ Min.   :   0.0   Min.   :   0.0   Min.   :   0.0   Min.   : -9.00  
+ 1st Qu.: 394.0   1st Qu.: 331.0   1st Qu.:  29.0   1st Qu.: 90.00  
+ Median : 442.0   Median : 359.0   Median :  68.0   Median :100.00  
+ Mean   : 440.2   Mean   : 355.9   Mean   : 207.6   Mean   : 95.17  
+ 3rd Qu.: 494.0   3rd Qu.: 389.0   3rd Qu.: 165.0   3rd Qu.:108.00  
+ Max.   :1500.0   Max.   :1500.0   Max.   :9999.0   Max.   :334.00  
+                                                                    
+      year     
+ Min.   :2009  
+ 1st Qu.:2011  
+ Median :2013  
+ Mean   :2013  
+ 3rd Qu.:2016  
+ Max.   :2019  
+               
+Classes ‘data.table’ and 'data.frame':	186759967 obs. of  13 variables:
+ $ AnimalIdentifier: chr  "AT 0007841167" "AT 0007841167" "AT 0007841167" "AT 0007841167" ...
+ $ BirthDate       : Date, format: "2013-10-13" "2013-10-13" ...
+ $ Parity          : int  3 3 3 3 3 3 3 3 3 3 ...
+ $ CalvDate        : Date, format: "2017-09-28" "2017-09-28" ...
+ $ type            : chr  "UBN" "UBN" "UBN" "UBN" ...
+ $ HerdIdentifier  : Factor w/ 14618 levels "590","870","919",..: 8531 8531 8531 8531 8531 8531 8531 8531 8531 8531 ...
+ $ TestDate        : Date, format: "2017-12-09" "2017-12-09" ...
+ $ Kgmilk          : int  222 222 208 208 207 207 205 205 107 107 ...
+ $ Fat             : int  350 350 440 440 400 400 382 382 358 358 ...
+ $ Protein         : int  317 317 325 325 364 364 364 364 366 366 ...
+ $ SCC             : int  11 11 36 36 48 48 67 67 105 105 ...
+ $ LactValue       : int  81 81 82 82 82 82 81 81 76 76 ...
+ $ year            : int  2017 2017 2018 2018 2018 2018 2018 2018 2018 2018 ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+[1] "animals pm24"
+[1] 5289957
+[1] "herds pm4"
+[1] 14618
+[1] 14618
+[1] "rows pm4"
+[1] 186759967
+[1] 13
+
+
+/************************************* PMDATA 41 *****************************************/
+
+ AnimalIdentifier     BirthDate              Parity          CalvDate         
+ Length:186759967   Min.   :1950-01-01   Min.   : 0.000   Min.   :1995-03-20  
+ Class :character   1st Qu.:2006-08-25   1st Qu.: 1.000   1st Qu.:2010-09-14  
+ Mode  :character   Median :2008-10-02   Median : 2.000   Median :2012-12-14  
+                    Mean   :2009-01-16   Mean   : 2.861   Mean   :2013-04-25  
+                    3rd Qu.:2011-08-31   3rd Qu.: 4.000   3rd Qu.:2015-10-20  
+                    Max.   :2019-11-04   Max.   :20.000   Max.   :2019-12-31  
+                                                          NA's   :448172      
+     type           HerdIdentifier         TestDate              Kgmilk     
+ Length:186759967   6430782:   181220   Min.   :2009-01-01   Min.   :  0.0  
+ Class :character   8266731:   145443   1st Qu.:2011-03-16   1st Qu.:200.0  
+ Mode  :character   8744570:    91275   Median :2013-06-26   Median :262.0  
+                    277282 :    78843   Mean   :2013-10-30   Mean   :266.8  
+                    6919701:    75973   3rd Qu.:2016-04-21   3rd Qu.:331.0  
+                    213682 :    71428   Max.   :2019-12-31   Max.   :992.0  
+                    (Other):186115785                                       
+      Fat            Protein            SCC           LactValue     
+ Min.   :   0.0   Min.   :   0.0   Min.   :   0.0   Min.   : -9.00  
+ 1st Qu.: 394.0   1st Qu.: 331.0   1st Qu.:  29.0   1st Qu.: 90.00  
+ Median : 442.0   Median : 359.0   Median :  68.0   Median :100.00  
+ Mean   : 440.2   Mean   : 355.9   Mean   : 207.6   Mean   : 95.17  
+ 3rd Qu.: 494.0   3rd Qu.: 389.0   3rd Qu.: 165.0   3rd Qu.:108.00  
+ Max.   :1500.0   Max.   :1500.0   Max.   :9999.0   Max.   :334.00  
+                                                                    
+      year     
+ Min.   :2009  
+ 1st Qu.:2011  
+ Median :2013  
+ Mean   :2013  
+ 3rd Qu.:2016  
+ Max.   :2019  
+               
+Classes ‘data.table’ and 'data.frame':	186759967 obs. of  13 variables:
+ $ AnimalIdentifier: chr  "AT 0007841167" "AT 0007841167" "AT 0007841167" "AT 0007841167" ...
+ $ BirthDate       : Date, format: "2013-10-13" "2013-10-13" ...
+ $ Parity          : int  3 3 3 3 3 3 3 3 3 3 ...
+ $ CalvDate        : Date, format: "2017-09-28" "2017-09-28" ...
+ $ type            : chr  "UBN" "UBN" "UBN" "UBN" ...
+ $ HerdIdentifier  : Factor w/ 14618 levels "590","870","919",..: 8531 8531 8531 8531 8531 8531 8531 8531 8531 8531 ...
+ $ TestDate        : Date, format: "2017-12-09" "2017-12-09" ...
+ $ Kgmilk          : int  222 222 208 208 207 207 205 205 107 107 ...
+ $ Fat             : int  350 350 440 440 400 400 382 382 358 358 ...
+ $ Protein         : int  317 317 325 325 364 364 364 364 366 366 ...
+ $ SCC             : int  11 11 36 36 48 48 67 67 105 105 ...
+ $ LactValue       : int  81 81 82 82 82 82 81 81 76 76 ...
+ $ year            : int  2017 2017 2018 2018 2018 2018 2018 2018 2018 2018 ...
+ - attr(*, ".internal.selfref")=<externalptr> 
+[1] "animals pm41"
+[1] 5289957
+[1] "herds pm41"
+[1] 14618
+[1] 14618
+[1] "rows pm41"
+[1] 186759967
+[1] 13
+
