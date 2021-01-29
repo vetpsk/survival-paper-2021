@@ -1,4 +1,4 @@
 * linguist-vendored
-*.R linguist-vendored=false
+*.r linguist-vendored=false
 *.sh lingust-vendored=false
-*.Rmd linguist-vendored=false
+*.rmd linguist-vendored=false
