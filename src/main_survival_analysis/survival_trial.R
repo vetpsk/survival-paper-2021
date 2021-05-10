@@ -153,6 +153,7 @@ text(600, 0.8, "model 4\n (slight difference is seen)", col = "red")
 
 
 
+
 ######### frailty attempt
 modsurv5 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~
                             LactValue1 + lastparity + Insemfactor +
@@ -160,3 +161,10 @@ modsurv5 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~
                             frailty(HerdIdentifier,sparse = T),
                     data = df2, dist = "lognormal")
 summary(modsurv5)
+
+modsurv6 <- survreg(Surv(tstart, tstop, event = event, type = "interval") ~
+                            LactValue1 + lastparity + Insemfactor +
+                            SCCfactor + fprfactor + fprfactor2 + perfactor +
+                            frailty(HerdIdentifier,sparse = T),
+                    data = df2, dist = "lognormal")
+summary(modsurv6)
