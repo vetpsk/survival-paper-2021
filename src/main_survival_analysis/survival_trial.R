@@ -1,7 +1,7 @@
 library(dplyr)
 library(data.table)
 
-df2 <- fread("survivaldata.csv", header = T, sep = ",", nThread = 2, verbose = T)
+df2 <- fread("./data/inter/survivaldata.csv", header = T, sep = ",", nThread = 2, verbose = T)
 
 ##########################DESCRIPTION OF DATA##############################
 ##### factors: 
