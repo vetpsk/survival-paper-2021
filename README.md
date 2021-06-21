@@ -54,3 +54,6 @@ This project is licensed under the terms of the [MIT License](/LICENSE.md)
 ## Citation
 
 Please [cite this project as described here](/CITATION.md).
+
+Paper Cite: APA-style
+Kulkarni, P., Mourits, M., Nielen, M., van den Broek, J., & Steeneveld, W. (2021). Survival analysis of dairy cows in the Netherlands under altering agricultural policy. Preventive Veterinary Medicine, 105398. https://doi.org/10.1016/j.prevetmed.2021.105398
